@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Launchpad Template Gallery</title>
-<meta name="description" content="Ten website templates for Launchpad AI Solutions — live previews, built with Vite + React, Hostinger-ready." />
+<meta name="description" content="Pick a website design you love — Launchpad AI Solutions will tailor it to your brand, content and services." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -37,6 +37,9 @@ h1 em{color:var(--accent)}
 .lede{color:var(--muted);max-width:60ch;font-size:16px;margin:0}
 .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{background:var(--chip);border-radius:999px;padding:5px 11px;font-size:12.5px;color:var(--muted)}
+.steps{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0}
+.steps li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px}
+.steps b{font-size:11.5px;color:var(--accent);letter-spacing:.08em}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:22px 0}
 .filters{display:flex;flex-wrap:wrap;gap:6px}
 .filters button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;height:34px;padding:0 14px;cursor:pointer;font:inherit;font-size:13px}
@@ -54,8 +57,8 @@ h1 em{color:var(--accent)}
 .card h2{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em}
 .tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 8px;white-space:nowrap}
 .card p{margin:0;color:var(--muted);font-size:14px}
-.actions{display:flex;gap:8px;margin-top:auto;padding-top:10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:10px;font-size:13.5px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:10px;font-size:13.5px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);flex:1}
 .btn:focus-visible,.filters button:focus-visible,.shot:focus-visible,.theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px}
@@ -88,18 +91,16 @@ dialog::backdrop{background:rgba(10,10,14,.6);backdrop-filter:blur(3px)}
 
   <section class="hero">
     <div class="eyebrow">Launchpad AI Solutions · Website templates</div>
-    <h1>Ten templates, <em>one</em> studio.</h1>
-    <p class="lede">Every design below is a live, working site — click through pages, services and forms. Contact and quote forms send a pre-filled WhatsApp message. Each one is a separate repo, ready to deploy on Hostinger.</p>
-    <div class="meta"><span class="chip">Vite + React + TypeScript</span><span class="chip">Express (Hostinger Node.js)</span><span class="chip">WhatsApp forms</span><span class="chip">143 services · 6 divisions</span></div>
+    <h1>Choose your <em>website</em> design.</h1>
+    <p class="lede">Browse ten ready-made website designs, open any of them and click around. Pick the one you like — we'll redesign it around your brand, colours, content and services.</p>
+    <ol class="steps"><li><b>01</b><span>Explore the live designs</span></li><li><b>02</b><span>Choose the one you like</span></li><li><b>03</b><span>We tailor it to your business</span></li></ol>
   </section>
 
   <div class="toolbar">
-    <div class="filters" role="group" aria-label="Filter templates">
+    <div class="filters" role="group" aria-label="Filter by style">
       <button type="button" data-f="all" aria-pressed="true">All</button>
       <button type="button" data-f="light" aria-pressed="false">Light</button>
       <button type="button" data-f="dark" aria-pressed="false">Dark</button>
-      <button type="button" data-f="react" aria-pressed="false">Original React</button>
-      <button type="button" data-f="wp" aria-pressed="false">From WordPress</button>
     </div>
     <span class="count" id="count" aria-live="polite"></span>
   </div>
@@ -107,7 +108,7 @@ dialog::backdrop{background:rgba(10,10,14,.6);backdrop-filter:blur(3px)}
   <main class="grid" id="grid"></main>
 </div>
 
-<footer><div class="wrap">Built for Launchpad AI Solutions · Source on <a href="https://github.com/anuragdc18">GitHub</a> · Demo WhatsApp number +91 98765 43210</div></footer>
+<footer><div class="wrap">© Launchpad AI Solutions · Every design is fully customised to your business before launch.</div></footer>
 
 <dialog id="dlg" aria-labelledby="dlgTitle">
   <div class="dlg">
@@ -118,6 +119,7 @@ dialog::backdrop{background:rgba(10,10,14,.6);backdrop-filter:blur(3px)}
         <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
         <button type="button" data-w="390px" aria-pressed="false">Mobile</button>
       </div>
+      <a class="btn primary" id="dlgChoose" href="#" target="_blank" rel="noopener" style="flex:0 0 auto">Choose this design</a>
       <a class="btn" id="dlgOpen" href="#" target="_blank" rel="noopener">Open ↗</a>
       <button class="btn" id="dlgClose" type="button" aria-label="Close preview">✕</button>
     </div>
@@ -127,22 +129,23 @@ dialog::backdrop{background:rgba(10,10,14,.6);backdrop-filter:blur(3px)}
 
 <script>
 const T = [
-  { id:"ledger", name:"Ledger", tone:"light", src:"react", desc:"Calm, editorial and trustworthy — a consultancy feel with a 3-step quote builder and service finder." },
-  { id:"monolith", name:"Monolith", tone:"dark", src:"react", desc:"Brutalist concrete and bold orange type. Big statements, strict grid, floating WhatsApp button." },
-  { id:"noir", name:"Noir", tone:"dark", src:"react", desc:"Cinematic film-noir experience — cold open, cast list and end card, with a ticket-style quote bar." },
-  { id:"orbit", name:"Orbit", tone:"dark", src:"react", desc:"Interactive 3D solar system: each planet is a division. Starfield transitions between pages." },
-  { id:"swiss-flow", name:"Swiss Flow", tone:"light", src:"react", desc:"International Typographic Style — rigorous grid, sticky chapters and expanding division panels." },
-  { id:"triminds-hoverfix", name:"Ecosystem", tone:"dark", src:"wp", desc:"Dark red ecosystem theme with hover-reveal service cards (originally a WordPress React bundle)." },
-  { id:"triminds-living-canvas", name:"Living Canvas", tone:"light", src:"wp", desc:"Sculptural 3D art direction with parallax depth layers and a pinned horizontal journey." },
-  { id:"triminds-orbit-wp", name:"Connects", tone:"dark", src:"wp", desc:"Electric-blue tech look — 'Everything connects' with scroll progress and division filters." },
-  { id:"triminds-template-us3", name:"Command Center", tone:"dark", src:"wp", desc:"Deep-blue command-center hero, mega menu, ecosystem map and process steps." },
-  { id:"triminds-us1", name:"Clean Growth", tone:"light", src:"wp", desc:"Bright SaaS-style layout with a live service catalog search across all six divisions." },
+  { id:"ledger", name:"Ledger", tone:"light", desc:"Calm, editorial and trustworthy — ideal for consultancies and professional services, with a guided quote builder." },
+  { id:"monolith", name:"Monolith", tone:"dark", desc:"Bold, architectural and confident. Big statements, a strict grid and striking orange accents." },
+  { id:"noir", name:"Noir", tone:"dark", desc:"A cinematic, story-led experience with dramatic imagery — perfect for brands that want to stand out." },
+  { id:"orbit", name:"Orbit", tone:"dark", desc:"An interactive 3D solar system where each planet is a service area. Memorable and playful." },
+  { id:"swiss-flow", name:"Swiss Flow", tone:"light", desc:"Clean Swiss-style typography and generous whitespace, with sticky chapters and expanding sections." },
+  { id:"triminds-hoverfix", name:"Ecosystem", tone:"dark", desc:"Dark, rich and modern, with deep red accents and hover-reveal service cards." },
+  { id:"triminds-living-canvas", name:"Living Canvas", tone:"light", desc:"Sculptural, art-directed visuals with parallax depth and a horizontal scrolling journey." },
+  { id:"triminds-orbit-wp", name:"Connects", tone:"dark", desc:"An electric-blue tech look with bold headlines — great for digital and technology businesses." },
+  { id:"triminds-template-us3", name:"Command Center", tone:"dark", desc:"Deep-blue, premium and structured, with a mega menu and a clear step-by-step process section." },
+  { id:"triminds-us1", name:"Clean Growth", tone:"light", desc:"Bright, friendly and conversion-focused, with a searchable catalogue of everything you offer." },
 ];
 const live = id => `https://anuragdc18.github.io/${id}/`;
-const repo = id => `https://github.com/anuragdc18/${id}`;
+const WA = "919876543210";
+const choose = t => `https://wa.me/${WA}?text=${encodeURIComponent(`Hi Launchpad AI Solutions, I like the "${t.name}" website design (template ${String(T.indexOf(t)+1).padStart(2,"0")}). Please redesign it for my business.\n\n${live(t.id)}`)}`;
 const grid = document.getElementById("grid"), count = document.getElementById("count");
 function render(f){
-  const list = T.filter(t => f==="all" || t.tone===f || t.src===f);
+  const list = T.filter(t => f==="all" || t.tone===f);
   grid.innerHTML = list.map((t) => `
     <article class="card">
       <button class="shot" type="button" data-prev="${t.id}" aria-label="Preview ${t.name}">
@@ -150,16 +153,16 @@ function render(f){
         <span class="num">${String(T.indexOf(t)+1).padStart(2,"0")}</span>
       </button>
       <div class="body">
-        <div class="row"><h2>${t.name}</h2><span class="tag">${t.src==="wp"?"From WordPress":"React"} · ${t.tone}</span></div>
+        <div class="row"><h2>${t.name}</h2><span class="tag">${t.tone==="dark"?"Dark":"Light"} style</span></div>
         <p>${t.desc}</p>
         <div class="actions">
-          <a class="btn primary" href="${live(t.id)}" target="_blank" rel="noopener">View live ↗</a>
+          <a class="btn primary" href="${choose(t)}" target="_blank" rel="noopener">Choose this design</a>
           <button class="btn" type="button" data-prev="${t.id}">Preview</button>
-          <a class="btn" href="${repo(t.id)}" target="_blank" rel="noopener" aria-label="${t.name} source on GitHub">Code</a>
+          <a class="btn" href="${live(t.id)}" target="_blank" rel="noopener" aria-label="Open ${t.name} in a new tab">Open ↗</a>
         </div>
       </div>
     </article>`).join("");
-  count.textContent = `${list.length} of ${T.length} templates`;
+  count.textContent = `${list.length} of ${T.length} designs`;
 }
 render("all");
 document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
@@ -172,6 +175,7 @@ grid.addEventListener("click", e => {
   const t = T.find(x => x.id === b.dataset.prev);
   document.getElementById("dlgTitle").textContent = t.name;
   document.getElementById("dlgOpen").href = live(t.id);
+  document.getElementById("dlgChoose").href = choose(t);
   frame.src = live(t.id);
   dlg.showModal();
 });
