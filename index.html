@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TriMinds Template Gallery</title>
+<meta name="description" content="Ten website templates for TriMinds AI Solutions — live previews, built with Vite + React, Hostinger-ready." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f6f5f2; --surface:#ffffff; --ink:#16161a; --muted:#5e5e66; --line:#e3e1dc;
+  --accent:#2f5bff; --accent-ink:#ffffff; --chip:#efede8; --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e0e11; --surface:#17171c; --ink:#f1f0ec; --muted:#a2a1a8; --line:#2a2a31;
+  --accent:#7d97ff; --accent-ink:#0e0e11; --chip:#202027; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#0e0e11; --surface:#17171c; --ink:#f1f0ec; --muted:#a2a1a8; --line:#2a2a31;
+  --accent:#7d97ff; --accent-ink:#0e0e11; --chip:#202027; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em;text-decoration:none}
+.brand i{width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-style:normal;font-size:13px}
+.theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;height:36px;padding:0 14px;cursor:pointer;font:inherit;font-size:13px}
+.hero{padding:56px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(40px,7vw,84px);line-height:.98;letter-spacing:-.02em;margin:14px 0 18px;max-width:14ch}
+h1 em{color:var(--accent)}
+.lede{color:var(--muted);max-width:60ch;font-size:16px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{background:var(--chip);border-radius:999px;padding:5px 11px;font-size:12.5px;color:var(--muted)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:22px 0}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;height:34px;padding:0 14px;cursor:pointer;font:inherit;font-size:13px}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px;padding-bottom:64px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-3px)}
+.shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--chip);cursor:zoom-in;border:0;padding:0;display:block;width:100%}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s ease}
+.card:hover .shot img{transform:scale(1.03)}
+.num{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.62);color:#fff;font-size:11.5px;letter-spacing:.06em;border-radius:999px;padding:3px 9px;backdrop-filter:blur(6px)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.card h2{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.actions{display:flex;gap:8px;margin-top:auto;padding-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border-radius:10px;font-size:13.5px;font-weight:500;text-decoration:none;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);flex:1}
+.btn:focus-visible,.filters button:focus-visible,.shot:focus-visible,.theme-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px}
+/* preview modal */
+dialog{border:0;padding:0;width:min(1400px,96vw);height:min(900px,92vh);border-radius:16px;background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.4);overflow:hidden}
+dialog::backdrop{background:rgba(10,10,14,.6);backdrop-filter:blur(3px)}
+.dlg{display:flex;flex-direction:column;height:100%}
+.dlg-bar{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dlg-bar strong{font-size:14px;margin-right:auto}
+.devices{display:flex;gap:4px;background:var(--chip);border-radius:10px;padding:3px}
+.devices button{border:0;background:transparent;color:var(--muted);border-radius:8px;height:30px;padding:0 10px;font:inherit;font-size:12.5px;cursor:pointer}
+.devices button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.stage{flex:1;display:grid;place-items:center;background:var(--bg);overflow:auto;padding:12px}
+.stage iframe{border:0;width:100%;height:100%;background:#fff;border-radius:10px;transition:width .3s ease}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:36px 0 28px}
+  dialog{width:100vw;height:100vh;max-width:100vw;max-height:100vh;border-radius:0}
+  .devices{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><i>T</i>TriMinds Templates</a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">◐ Theme</button>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">TriMinds AI Solutions · Website templates</div>
+    <h1>Ten templates, <em>one</em> studio.</h1>
+    <p class="lede">Every design below is a live, working site — click through pages, services and forms. Contact and quote forms send a pre-filled WhatsApp message. Each one is a separate repo, ready to deploy on Hostinger.</p>
+    <div class="meta"><span class="chip">Vite + React + TypeScript</span><span class="chip">Express (Hostinger Node.js)</span><span class="chip">WhatsApp forms</span><span class="chip">143 services · 6 divisions</span></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="filters" role="group" aria-label="Filter templates">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="light" aria-pressed="false">Light</button>
+      <button type="button" data-f="dark" aria-pressed="false">Dark</button>
+      <button type="button" data-f="react" aria-pressed="false">Original React</button>
+      <button type="button" data-f="wp" aria-pressed="false">From WordPress</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+
+  <main class="grid" id="grid"></main>
+</div>
+
+<footer><div class="wrap">Built for TriMinds AI Solutions · Source on <a href="https://github.com/anuragdc18">GitHub</a> · Demo WhatsApp number +91 98765 43210</div></footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <div class="dlg-bar">
+      <strong id="dlgTitle">Preview</strong>
+      <div class="devices" role="group" aria-label="Preview size">
+        <button type="button" data-w="100%" aria-pressed="true">Desktop</button>
+        <button type="button" data-w="820px" aria-pressed="false">Tablet</button>
+        <button type="button" data-w="390px" aria-pressed="false">Mobile</button>
+      </div>
+      <a class="btn" id="dlgOpen" href="#" target="_blank" rel="noopener">Open ↗</a>
+      <button class="btn" id="dlgClose" type="button" aria-label="Close preview">✕</button>
+    </div>
+    <div class="stage"><iframe id="frame" title="Template preview" loading="lazy"></iframe></div>
+  </div>
+</dialog>
+
+<script>
+const T = [
+  { id:"ledger", name:"Ledger", tone:"light", src:"react", desc:"Calm, editorial and trustworthy — a consultancy feel with a 3-step quote builder and service finder." },
+  { id:"monolith", name:"Monolith", tone:"dark", src:"react", desc:"Brutalist concrete and bold orange type. Big statements, strict grid, floating WhatsApp button." },
+  { id:"noir", name:"Noir", tone:"dark", src:"react", desc:"Cinematic film-noir experience — cold open, cast list and end card, with a ticket-style quote bar." },
+  { id:"orbit", name:"Orbit", tone:"dark", src:"react", desc:"Interactive 3D solar system: each planet is a division. Starfield transitions between pages." },
+  { id:"swiss-flow", name:"Swiss Flow", tone:"light", src:"react", desc:"International Typographic Style — rigorous grid, sticky chapters and expanding division panels." },
+  { id:"triminds-hoverfix", name:"Ecosystem", tone:"dark", src:"wp", desc:"Dark red ecosystem theme with hover-reveal service cards (originally a WordPress React bundle)." },
+  { id:"triminds-living-canvas", name:"Living Canvas", tone:"light", src:"wp", desc:"Sculptural 3D art direction with parallax depth layers and a pinned horizontal journey." },
+  { id:"triminds-orbit-wp", name:"Connects", tone:"dark", src:"wp", desc:"Electric-blue tech look — 'Everything connects' with scroll progress and division filters." },
+  { id:"triminds-template-us3", name:"Command Center", tone:"dark", src:"wp", desc:"Deep-blue command-center hero, mega menu, ecosystem map and process steps." },
+  { id:"triminds-us1", name:"Clean Growth", tone:"light", src:"wp", desc:"Bright SaaS-style layout with a live service catalog search across all six divisions." },
+];
+const live = id => `https://anuragdc18.github.io/${id}/`;
+const repo = id => `https://github.com/anuragdc18/${id}`;
+const grid = document.getElementById("grid"), count = document.getElementById("count");
+function render(f){
+  const list = T.filter(t => f==="all" || t.tone===f || t.src===f);
+  grid.innerHTML = list.map((t) => `
+    <article class="card">
+      <button class="shot" type="button" data-prev="${t.id}" aria-label="Preview ${t.name}">
+        <img src="thumbs/${t.id}.webp" alt="${t.name} template home page" loading="lazy" width="960" height="600">
+        <span class="num">${String(T.indexOf(t)+1).padStart(2,"0")}</span>
+      </button>
+      <div class="body">
+        <div class="row"><h2>${t.name}</h2><span class="tag">${t.src==="wp"?"From WordPress":"React"} · ${t.tone}</span></div>
+        <p>${t.desc}</p>
+        <div class="actions">
+          <a class="btn primary" href="${live(t.id)}" target="_blank" rel="noopener">View live ↗</a>
+          <button class="btn" type="button" data-prev="${t.id}">Preview</button>
+          <a class="btn" href="${repo(t.id)}" target="_blank" rel="noopener" aria-label="${t.name} source on GitHub">Code</a>
+        </div>
+      </div>
+    </article>`).join("");
+  count.textContent = `${list.length} of ${T.length} templates`;
+}
+render("all");
+document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x===b));
+  render(b.dataset.f);
+}));
+const dlg = document.getElementById("dlg"), frame = document.getElementById("frame");
+grid.addEventListener("click", e => {
+  const b = e.target.closest("[data-prev]"); if (!b) return;
+  const t = T.find(x => x.id === b.dataset.prev);
+  document.getElementById("dlgTitle").textContent = t.name;
+  document.getElementById("dlgOpen").href = live(t.id);
+  frame.src = live(t.id);
+  dlg.showModal();
+});
+const close = () => { dlg.close(); frame.src = "about:blank"; };
+document.getElementById("dlgClose").addEventListener("click", close);
+dlg.addEventListener("click", e => { if (e.target === dlg) close(); });
+dlg.addEventListener("cancel", () => { frame.src = "about:blank"; });
+document.querySelectorAll(".devices button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".devices button").forEach(x => x.setAttribute("aria-pressed", x===b));
+  frame.style.width = b.dataset.w;
+}));
+const root = document.documentElement, btn = document.getElementById("themeBtn");
+try { const s = localStorage.getItem("tm-theme"); if (s) root.dataset.theme = s; } catch {}
+btn.addEventListener("click", () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("tm-theme", root.dataset.theme); } catch {}
+});
+</script>
+</body>
+</html>
